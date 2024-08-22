@@ -54,7 +54,7 @@ class nuevoUsuario {//clase del usuario
                 sessionStorage.setItem("rolActual", users[i].rol)
                 sessionStorage.setItem("nombreActual", users[i].nombre + " " + users[i].apellido)
                 location.href = "usuarios.html"
-                let correcto = true
+                correcto = true
                 break
             }
         }
