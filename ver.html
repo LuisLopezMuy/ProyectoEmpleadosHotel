@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles GT - Administrador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="cargarDatos()">
+    <div>
+    <p class="titulo">Hoteles GT - Administrador</p>
+
+    <h1>Ver Detalles de Usuario</h1>
+    
+    <form id="usuario">
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" id="nombre" disabled><br>
+        <label for="apellido">Apellido: </label>
+        <input type="text" name="apellido" id="apellido" disabled><br>
+        <label for="telefono">Teléfono: </label>
+        <input type="number" name="telefono" id="telefono" disabled><br>
+        <label for="direccion">Direccion: </label>
+        <input type="text" name="direccion" id="direccion" disabled><br>
+        <label for="correo">Correo: </label>
+        <input type="email" name="correo" id="correo" disabled><br>
+        <label for="fecha">Fecha de Nacimiento: </label>
+        <input type="date" name="fecha" id="fecha" disabled><br>
+        <label for="contraN">Contraseña: </label>
+        <input type="text" name="contraN" id="contraN" disabled><br>
+        <label for="rol">Rol: </label>
+        <select name="rol" id="rol">
+            <option value="Empleado">Empleado</option>
+            <option value="Administrador">Administrador</option>
+        </select><br><br>
+    </form>
+    
+    <button onclick="cancelar()">Regresar</button><br><br>
+</div>
+    <script src="script.js"></script>
+</body>
+
+</html>

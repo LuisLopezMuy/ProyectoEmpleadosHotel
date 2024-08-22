@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles GT - Usuarios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="mostrarUsuarios()">
+    <p class="titulo">Hoteles GT - Usuarios</p>
+    <a href="./agregar.html" id="oculto1">Agregar Usuario</a>
+    <a href="./index.html" id="botonSalir">Salir</a>
+    <p id="nombreActual">Usuario: </p>
+
+    <table id="tablaUsuarios">
+        <tr>
+            <td></td>
+            <td>No.</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>Rol</td>
+            <td>Correo</td>
+            <td>Teléfono</td>
+        </tr>
+    </table><br>
+
+    <button onclick="botonVer()">Ver Detalles</button>
+    <button onclick="botonModificar()" id="oculto2">Modificar Usuario</button>
+    <button onclick="botonEliminar()" id="oculto3">Eliminar Usuario</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
