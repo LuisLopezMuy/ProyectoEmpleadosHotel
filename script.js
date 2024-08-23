@@ -1,7 +1,7 @@
 {//Crear los usuarios o conectarse a
     var users = JSON.parse(localStorage.getItem("Users"))
 
-    if (users == null||users =="") {
+    if (users == null || users == "") {
         users = [{
             nombre: "Luis",
             apellido: "López",
@@ -105,7 +105,7 @@ class nuevoUsuario {//clase del usuario
     }
 }
 
-{//Nuevo Usuario
+{//Agregar nuevo Usuario
     var nombre = document.getElementById("nombre")
     var apellido = document.getElementById("apellido")
     var telefono = document.getElementById("telefono")
@@ -123,6 +123,7 @@ class nuevoUsuario {//clase del usuario
             users.push(x)
             localStorage.setItem("Users", JSON.stringify(users))
             location.href = "agregar.html"
+            alert("Usuario agregado correctamente \nPuede seguir agregando usuarios")
         }
 
     }
@@ -149,7 +150,7 @@ class nuevoUsuario {//clase del usuario
         if (nombre.value == "" || apellido.value == "" || telefono.value == "" || direccion.value == "" || correo.value == "" || fechaNacimiento.value == "" || contrasena.value == "" || rol.value == "") {
             alert("Por favor llene todos los campos")
         } else {
-            alert("se cumple")
+            alert("Usuario modificado correctamente")
 
             let x = new nuevoUsuario(nombre.value, apellido.value, telefono.value, direccion.value, correo.value, fechaNacimiento.value, contrasena.value, rol.value)
             users[index] = x
@@ -162,10 +163,12 @@ class nuevoUsuario {//clase del usuario
 
 {//Eliminar
     function eliminar() {
-        let index = sessionStorage.getItem("seleccionEmpleado")
-        users.splice(index, 1)
-        localStorage.setItem("Users", JSON.stringify(users))
-        location.href = "usuarios.html"
+        if (confirm("¿Está seguro de eliminar este usuario?")) {
+            let index = sessionStorage.getItem("seleccionEmpleado")
+            users.splice(index, 1)
+            localStorage.setItem("Users", JSON.stringify(users))
+            location.href = "usuarios.html"
+        }
     }
 
 }
@@ -193,8 +196,7 @@ class nuevoUsuario {//clase del usuario
 
         for (let i = 0; i < users.length; i++) {
 
-            tablaUsuarios.innerHTML += `<tr>
-            <td><input type="radio" name="seleccionarEmpleado" onchange="seleccionarEmpleado(${i})"></td>
+            tablaUsuarios.innerHTML += `<tr id="r${i}" onclick="seleccionarEmpleado(${i})" onmouseover="resaltar(${i})" onmouseout="noResaltar(${i})">
             <td>${i + 1}</td>
             <td>${users[i].nombre}</td>
             <td>${users[i].apellido}</td>
@@ -208,7 +210,30 @@ class nuevoUsuario {//clase del usuario
 
 {//Funciones varias
     function seleccionarEmpleado(x) {//Asigna el número de empleado a una variable para utilizar en otras funciones
+        let selecccionEmpleado = sessionStorage.getItem("seleccionEmpleado")
+        if (selecccionEmpleado == "null") {
+            selecccionEmpleado = 0
+        }
+
+        let registroAnterior = document.getElementById(`r${selecccionEmpleado}`)
+        registroAnterior.style.backgroundColor = "white"
+
+        let registro = document.getElementById(`r${x}`)
+        registro.style.backgroundColor = "#CCCCCC"
         sessionStorage.setItem("seleccionEmpleado", x)
     }
 
+    function resaltar(x) {//Resaltar registro
+        if (x != sessionStorage.getItem("seleccionEmpleado")) {
+            let registro = document.getElementById(`r${x}`)
+            registro.style.backgroundColor = "#E5E5E5"
+        }
+    }
+
+    function noResaltar(x) {//Dejar de resaltar registro
+        if (x != sessionStorage.getItem("seleccionEmpleado")) {
+            let registro = document.getElementById(`r${x}`)
+            registro.style.backgroundColor = "white"
+        }
+    }
 }
