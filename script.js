@@ -69,7 +69,7 @@ class nuevoUsuario {//clase del usuario
                 botonIngresar.disabled = "true"
                 mensaje.textContent = ""
             } else {
-                mensaje.textContent = "Usuario y contraseña incorrectos"
+                mensaje.textContent = "Usuario o contraseña incorrectos"
             }
         }
     }

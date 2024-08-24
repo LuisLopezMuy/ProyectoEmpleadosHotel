@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoteles GT - Log In</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div>
-        <p class="titulo">Iniciar Sesión</p><br>
-        <img src="logoHotel.jpg"><br><br>
-        <form id="login">
-            <label for="usuario">Usuario: </label>
-            <input type="email" id="usuario" name="usuario"><br><br>
-            <label for="contra">Contraseña: </label>
-            <input type="password" id="contra" name="contra"><br><br><br>
-        </form>
-        <button onclick="ingresar()" id="botonIngresar">Iniciar Sesión</button><br>
-        <p id="mensaje"></p>
+    <div id="div">
+        <div id="logo"><img src="logo.png"></div>
+        <div id="login">
+            <form>
+                <label for="usuario">Usuario: </label><br>
+                <input type="email" id="usuario" name="usuario"><br><br>
+                <label for="contra">Contraseña: </label><br>
+                <input type="password" id="contra" name="contra"><br>
+            </form>
+            <button onclick="ingresar()" id="botonIngresar">Iniciar Sesión</button><br>
+            <p id="mensaje">!!Bienvenido¡¡</p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
