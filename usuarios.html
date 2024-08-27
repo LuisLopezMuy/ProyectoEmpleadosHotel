@@ -4,30 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoteles GT - Usuarios</title>
+    <title>Empire Hotel - Usuarios</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body onload="mostrarUsuarios()">
-    <p class="titulo">Hoteles GT - Usuarios</p>
-    <a href="./agregar.html" id="oculto1">Agregar Usuario</a>
-    <a href="./index.html" id="botonSalir">Salir</a>
-    <p id="nombreActual">Usuario: </p>
+    <div class="titulo">
+        <p>EMPIRE HOTEL</p>
+    </div>
+    <div id="subtitulos">
+        <div id="agregarUsuario">
+            <a href="./agregar.html">Agregar Usuario</a>
+        </div>
+        <div id="usuarioActual">
+            <p id="nombreActual">Usuario: </p>
+            <a href="./index.html" id="botonSalir">Cerrar Sesión</a>
+        </div>
+    </div>
+    </div>
 
     <table id="tablaUsuarios">
         <tr>
-            <td>No.</td>
-            <td>Nombre</td>
-            <td>Apellido</td>
-            <td>Rol</td>
-            <td>Correo</td>
-            <td>Teléfono</td>
+            <td class="encabezados">No.</td>
+            <td class="encabezados">Nombre</td>
+            <td class="encabezados">Apellido</td>
+            <td class="encabezados">Rol</td>
+            <td class="encabezados">Correo</td>
+            <td class="encabezados">Teléfono</td>
         </tr>
     </table><br>
 
+    <div id="divBotones">
     <button onclick="botonVer()">Ver Detalles</button>
-    <button onclick="botonModificar()" id="oculto2">Modificar Usuario</button>
-    <button onclick="botonEliminar()" id="oculto3">Eliminar Usuario</button>
+    <button class="botonMargen" onclick="botonModificar()" id="oculto2">Modificar Usuario</button>
+    <button class="botonMargen" onclick="botonEliminar()" id="oculto3">Eliminar Usuario</button>
+    </div>
 
     <script src="script.js"></script>
 </body>

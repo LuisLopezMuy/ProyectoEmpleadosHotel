@@ -46,8 +46,8 @@ class nuevoUsuario {//clase del usuario
     function ingresar() {
         let usuario = document.getElementById("usuario")
         let contra = document.getElementById("contra")
-        let mensaje = document.getElementById("mensaje")
         let botonIngresar = document.getElementById("botonIngresar")
+        let mensajeIncorrecto = document.getElementById("mensaje")
 
         for (let i = 0; i < users.length; i++) {
             if (usuario.value == users[i].correo && contra.value == users[i].contrasena) {
@@ -67,9 +67,9 @@ class nuevoUsuario {//clase del usuario
                 contra.disabled = "true"
                 contra.value = ""
                 botonIngresar.disabled = "true"
-                mensaje.textContent = ""
+                mensajeIncorrecto.style.visibility="hidden"
             } else {
-                mensaje.textContent = "Usuario o contraseña incorrectos"
+                mensajeIncorrecto.style.visibility="visible"
             }
         }
     }
@@ -129,7 +129,7 @@ class nuevoUsuario {//clase del usuario
     }
 }
 
-{//Cargar datos
+{//Cargar datos en formularios
     let index = sessionStorage.getItem("seleccionEmpleado")
     function cargarDatos() {
         nombre.value = users[index].nombre
@@ -175,8 +175,8 @@ class nuevoUsuario {//clase del usuario
 
 {//Mostrar la tabla
     function mostrarUsuarios() {
-        if (rolActual != "Administrador") {
-            let oculto1 = document.getElementById("oculto1")
+        if (rolActual != "Administrador") {//Mostrar o no botones, según el rol
+            let oculto1 = document.getElementById("agregarUsuario")
             let oculto2 = document.getElementById("oculto2")
             let oculto3 = document.getElementById("oculto3")
             oculto1.style.visibility = "hidden"
@@ -186,7 +186,7 @@ class nuevoUsuario {//clase del usuario
 
 
 
-        let usuarioActual = document.getElementById("nombreActual")
+        let usuarioActual = document.getElementById("nombreActual")//Mostrar nombre de usuario actual
         usuarioActual.textContent = "Usuario: " + nombreActual
 
 

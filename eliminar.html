@@ -4,17 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoteles GT - Administrador</title>
+    <title>Empire Hotel - Eliminar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body onload="cargarDatos()">
+    <div class="titulo"><p>EMPIRE HOTEL</p></div>
     <div>
-    <p class="titulo">Hoteles GT - Administrador</p>
-
     <h1>Eliminar Usuario</h1>
     
-    <form id="usuario">
+    <form id="formUsuario">
         <label for="nombre">Nombre: </label>
         <input type="text" name="nombre" id="nombre" disabled><br>
         <label for="apellido">Apellido: </label>
@@ -36,8 +35,10 @@
         </select><br><br>
     </form>
     
+    <div id="divBotones">
     <button onclick="eliminar()">Eliminar</button>
-    <button onclick="cancelar()">Cancelar</button><br><br>
+    <button class="botonMargen" onclick="cancelar()">Cancelar</button>
+</div>
 </div>
     <script src="script.js"></script>
 </body>
